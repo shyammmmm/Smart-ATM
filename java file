@@ -1,0 +1,70 @@
+package smart_ATM;
+
+import java.util.Scanner;
+
+public class Atm_new {
+
+	public static void main(String[] args) {
+		int pin = 1234;
+		int balance = 10000;
+		
+		int addamt = 0;
+		int takeamt = 0;
+		int opt = 0;
+		
+		String name;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the PIN number");
+		int password = sc.nextInt();
+		if (password == pin)
+		{
+			System.out.println("Enter your name");
+			name  = sc.next();
+			System.out.println("Welcome " + name +"\n");
+		}
+		while(opt!=5)
+		{
+			System.out.println("Press 1 to check your balance");
+			System.out.println("Press 2 to Deposit Cash");
+			System.out.println("Press 3 to withdraw amount");
+			System.out.println("Press 4 for mini statement");
+			System.out.println("Press 5 to exit");
+		    opt = sc.nextInt();
+			switch (opt) {
+			case 1:
+				System.out.println("Your available balance is " + balance);
+				break;
+			case 2:
+				System.out.println("Enter the amt to be deposited");
+				addamt = sc.nextInt();
+				balance = addamt+balance;
+				System.out.println("Enter the amt has been deposited");
+				break;
+			case 3:
+				System.out.println("Enter the amt to be withdrawn");
+				takeamt = sc.nextInt();
+				balance = takeamt+balance;
+				System.out.println("Enter the amt has been withdrawn");
+				break;
+			case 4:
+				System.out.println("Your available balance is " + balance);
+				System.out.println("Your amt deposited is " + addamt);
+				System.out.println("Your amt withdrawn is " + takeamt);
+				break;
+			case 5:
+				System.out.println("Thank you for banking with us!" );
+				break;
+				
+				
+				
+			
+			}
+		}
+		
+
+		
+
+	}
+
+}
